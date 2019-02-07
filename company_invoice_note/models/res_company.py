@@ -19,8 +19,9 @@ class ResCompany(models.Model):
         help="Define on where to place the additional invoice note on the "
              "invoice report",
     )
-    # This field should be HTML be Html translatable is buggy
-    invoice_note = fields.Text(
+    invoice_note = fields.Html(
         help="Note who'll be printed on every invoice related to this company",
         translate=True,
+        # put sanitize False to avoid issue with translations
+        sanitize=False,
     )

@@ -35,8 +35,7 @@ class AccountConfigSettings(models.TransientModel):
     # So the default_get fill the invoice_note (in current lang).
     # Then the following onchange update it when the company_id change.
     # Finally, the set_default will write on the company (with correct lang)
-    # This field should be HTML be Html translatable is buggy
-    invoice_note = fields.Text(
+    invoice_note = fields.Html(
         help="Note who'll be printed on every invoice related to this company",
     )
 
